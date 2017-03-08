@@ -99,7 +99,7 @@ if __name__ == "__main__":
     raw_data = {}
     init_value = 1.0
 
-    experiment_strategies = ["random", "min_frequency", "linear_weighted", "sigmoid_weighted", "linear_min_weighted"]
+    experiment_strategies = ["random", "min_frequency", "linear_weighted", "sigmoid_weighted"]
     
     n = 100
     

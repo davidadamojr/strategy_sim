@@ -38,7 +38,7 @@ class FrequencyEngine:
             if weight_type == FrequencyEngine.LINEAR:
                 event_weight = 1.0 / (1 + event_frequency)
             elif weight_type == FrequencyEngine.SIGMOID:
-                event_weight = 1.0 / (1 + math.exp(math.log(event_frequency + 0.1)))
+                event_weight = 1.0 / math.exp(math.log(event_frequency + 0.1))
             weight_dict[event] = event_weight 
             
             total_weight = total_weight + event_weight
