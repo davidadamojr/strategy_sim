@@ -30,7 +30,7 @@ def simulate_states():
 
     log_divisor = []
     no_log_divisor = []
-    num_points = 100
+    num_points = 1000
     for _ in range(0, num_points):
         exp_gain = 0
         for value in values:
