@@ -55,8 +55,8 @@ def linear_weighted_selection(available_events):
 def sigmoid_weighted_selection(available_events):
     return frequency_engine.weighted_selection(available_events, FrequencyEngine.SIGMOID)
 
-def linear_min_weighted_selection(available_events):
-    return frequency_engine.linear_min_weighted_selection(available_events)
+def sigmoid_min_weighted_selection(available_events):
+    return frequency_engine.sigmoid_min_weighted_selection(available_events)
 
 def check_all_nodes_reachable(graph):
     def depth_first_search(start_node, target):
@@ -89,17 +89,16 @@ SELECTION_STRATEGIES = {
     'min_frequency' : min_frequency_selection,
     'linear_weighted' : linear_weighted_selection,
     'sigmoid_weighted' : sigmoid_weighted_selection,
-    'linear_min_weighted' : linear_min_weighted_selection
+    'sigmoid_min_weighted' : sigmoid_min_weighted_selection
 }
 
 if __name__ == "__main__":
-    import graphs
     import numpy
     
     raw_data = {}
     init_value = 1.0
 
-    experiment_strategies = ["random", "min_frequency", "linear_weighted", "sigmoid_weighted"]
+    experiment_strategies = ["random", "min_frequency", "linear_weighted", "sigmoid_weighted", "sigmoid_min_weighted"]
     
     n = 100
     
@@ -122,7 +121,7 @@ if __name__ == "__main__":
             
             trials = trials + 1
         else:
-            print "Bad graph for {} strategy, iteration {}!".format(strategy, i)
+            print "Bad graph."
 
     print "\nAverage test suite length"
     print "========================="

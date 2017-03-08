@@ -55,7 +55,7 @@ class FrequencyEngine:
         self.freq_map[selected_event] += 1
         return selected_event 
     
-    def linear_min_weighted_selection(self, available_events):
+    def sigmoid_min_weighted_selection(self, available_events):
         candidates = []
         for event in available_events:
             if self.freq_map[event] == 0:
@@ -66,7 +66,7 @@ class FrequencyEngine:
             self.freq_map[selected_event] += 1
             return selected_event
         
-        return self.weighted_selection(available_events, FrequencyEngine.LINEAR)
+        return self.weighted_selection(available_events, FrequencyEngine.SIGMOID)
                 
             
     
